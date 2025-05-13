@@ -27,6 +27,12 @@
       background: #d6cbb3;
       border: 1px solid #a3a3a3;
       border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .option-card:hover {
       border-color: #4b5e9e;
@@ -35,12 +41,16 @@
     .option-card img {
       transition: opacity 0.3s ease;
       border-radius: 0.5rem;
+      max-height: 80px;
+      object-fit: cover;
     }
     .option-card:hover img {
       opacity: 0.95;
     }
     .option-card p {
       color: #1e1e1e;
+      margin-top: 0.5rem;
+      word-break: break-word;
     }
     .option-card.selected {
       border-color: #4b5e9e;
@@ -139,6 +149,11 @@
       .text-2xl {
         font-size: 1.25rem;
       }
+
+      #summary-content {
+        max-width: 100%;
+        overflow-wrap: break-word;
+      }
     }
   </style>
 </head>
@@ -210,9 +225,9 @@
           </div>
           <div>
             <label class="block text-sm font-medium">Dimensions (Length x Width in feet)</label>
-            <div class="flex space-x-4">
-              <input type="number" id="length" class="w-1/2 p-3 rounded-lg" min="10" max="100" placeholder="Length" required>
-              <input type="number" id="width" class="w-1/2 p-3 rounded-lg" min="10" max="50" placeholder="Width" required>
+            <div class="space-y-4">
+              <input type="number" id="length" class="w-full p-3 rounded-lg" min="10" max="100" placeholder="e.g., 20" required>
+              <input type="number" id="width" class="w-full p-3 rounded-lg" min="10" max="50" placeholder="e.g., 15" required>
             </div>
           </div>
           <div>
@@ -282,17 +297,17 @@
           <div>
             <label class="block text-sm font-medium">Tile Style</label>
             <div class="grid grid-cols-3 gap-4" id="tile-style-options">
-              <div class="option-card p-3 cursor-pointer" onclick="selectOption('tile-style', 'glass')">
-                <img src="https://www.emser.com/images/glass-tile-example.jpg" alt="Glass Tile" class="w-full">
-                <p class="text-center mt-2">Glass</p>
+              <div class="option-card p-2 cursor-pointer" onclick="selectOption('tile-style', 'glass')">
+                <img src="https://www.emser.com/images/glass-tile-example.jpg" alt="Glass Tile" class="w-full h-20 object-cover">
+                <p class="text-center mt-1 text-sm">Glass</p>
               </div>
-              <div class="option-card p-3 cursor-pointer" onclick="selectOption('tile-style', 'porcelain')">
-                <img src="https://www.emser.com/images/porcelain-tile-example.jpg" alt="Porcelain Tile" class="w-full">
-                <p class="text-center mt-2">Porcelain</p>
+              <div class="option-card p-2 cursor-pointer" onclick="selectOption('tile-style', 'porcelain')">
+                <img src="https://www.emser.com/images/porcelain-tile-example.jpg" alt="Porcelain Tile" class="w-full h-20 object-cover">
+                <p class="text-center mt-1 text-sm">Porcelain</p>
               </div>
-              <div class="option-card p-3 cursor-pointer" onclick="selectOption('tile-style', 'natural-stone')">
-                <img src="https://www.emser.com/images/natural-stone-tile-example.jpg" alt="Natural Stone" class="w-full">
-                <p class="text-center mt-2">Natural Stone</p>
+              <div class="option-card p-2 cursor-pointer" onclick="selectOption('tile-style', 'natural-stone')">
+                <img src="https://www.emser.com/images/natural-stone-tile-example.jpg" alt="Natural Stone" class="w-full h-20 object-cover">
+                <p class="text-center mt-1 text-sm">Natural Stone</p>
               </div>
             </div>
             <input type="hidden" id="tile-style" required>
@@ -319,30 +334,37 @@
           <label class="flex items-center">
             <input type="checkbox" id="tanning-ledge" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Tanning Ledge</span>
+            <img src="https://www.jandy.com/products/water-features/sheer-descent-example.jpg" alt="Tanning Ledge" class="ml-3 w-16">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="bench-seating" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Bench Seating</span>
+            <img src="https://www.jandy.com/products/water-features/bubbler-example.jpg" alt="Bench Seating" class="ml-3 w-16">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="raised-spa" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Raised Spa</span>
+            <img src="https://www.jandy.com/products/water-features/spillover-spa-example.jpg" alt="Raised Spa" class="ml-3 w-16">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="raised-beam" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Raised Beam / Waterline Wall</span>
+            <img src="https://www.jandy.com/products/water-features/water-bowl-example.jpg" alt="Raised Beam" class="ml-3 w-16">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="baja-shelf" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Deep-end Swim Out / Baja Shelf</span>
+            <img src="https://www.jandy.com/products/water-features/sheer-descent-example.jpg" alt="Baja Shelf" class="ml-3 w-16">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="steps-lighting" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Steps with Lighting</span>
+            <img src="https://www.jandy.com/products/water-features/bubbler-example.jpg" alt="Steps with Lighting" class="ml-3 w-16">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="retaining-walls" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Retaining Walls (if on slope)</span>
+            <img src="https://www.jandy.com/products/water-features/spillover-spa-example.jpg" alt="Retaining Walls" class="ml-3 w-16">
           </label>
         </div>
         <div class="flex justify-between mt-8">
@@ -381,9 +403,9 @@
             <label class="block text-sm font-medium">Estimated Deck Square Footage</label>
             <input type="number" id="deck-sqft" class="w-full p-3 rounded-lg" min="100" placeholder="e.g., 500" required>
           </div>
-          <div>
+          <div class="space-y-6">
             <label class="block text-sm font-medium">Add-on Features</label>
-            <label class="flex items-center">
+            <label class="flex items-center space-y-6">
               <input type="checkbox" id="fire-pit" class="mr-3 h-5 w-5 text-blue-500">
               <span class="text-sm">Fire Pit / Fire Bowl</span>
             </label>
@@ -462,7 +484,7 @@
         <h2 class="text-3xl font-semibold mb-6">Review & Estimate</h2>
         <div id="summary" class="space-y-6">
           <h3 class="text-2xl font-medium">Your Selections</h3>
-          <div id="summary-content" class="text-sm"></div>
+          <div id="summary-content" class="text-sm max-w-full overflow-wrap-break-word"></div>
           <h3 class="text-2xl font-medium">Estimated Price Range</h3>
           <p id="price-range" class="text-2xl font-bold text-[#1b1f3b]"></p>
           <p class="text-sm text-secondary">This is a rough estimate. Final pricing depends on site conditions, access, and selected materials.</p>
@@ -568,34 +590,29 @@
     }
 
     function calculatePriceRange() {
-      let basePrice = 20000; // Base cost for gunite pool in Bakersfield
+      let basePrice = 20000;
       let lowRange = basePrice;
       let highRange = basePrice * 1.3;
 
-      // Pool size (gunite pool: $50–$75 per sq ft in Bakersfield)
       const area = formData.poolStyle.length * formData.poolStyle.width;
       lowRange += area * 50;
       highRange += area * 75;
 
-      // Spa
       if (formData.poolStyle.spa === 'yes') {
         lowRange += 8000;
         highRange += 12000;
       }
 
-      // Plaster type
       if (formData.interiorFinish.plasterType !== 'standard') {
         lowRange += 4000;
         highRange += 6000;
       }
 
-      // Tile style
       if (formData.tileCoping.tileStyle === 'glass' || formData.tileCoping.tileStyle === 'natural-stone') {
         lowRange += 2500;
         highRange += 4000;
       }
 
-      // Structural features (adjusted for Bakersfield labor/material costs)
       const structuralCosts = {
         tanningLedge: 4000,
         benchSeating: 2500,
@@ -612,12 +629,10 @@
         }
       }
 
-      // Decking (Bakersfield rates: $12–$18 per sq ft)
       const deckCostPerSqft = formData.deckingHardscape.deckingType === 'pavers' ? 18 : 12;
       lowRange += formData.deckingHardscape.deckSqft * deckCostPerSqft;
       highRange += formData.deckingHardscape.deckSqft * deckCostPerSqft * 1.2;
 
-      // Hardscape add-ons
       if (formData.deckingHardscape.firePit) {
         lowRange += 4000;
         highRange += 6000;
@@ -631,7 +646,6 @@
         highRange += 9000;
       }
 
-      // Water features
       const waterFeatureCosts = {
         sheerDescents: 2500,
         bubblers: 1500,
