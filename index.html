@@ -107,6 +107,12 @@
     .text-secondary {
       color: #a3a3a3;
     }
+    .feature-img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 0.25rem;
+    }
 
     /* Mobile responsiveness */
     @media (max-width: 768px) {
@@ -334,37 +340,37 @@
           <label class="flex items-center">
             <input type="checkbox" id="tanning-ledge" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Tanning Ledge</span>
-            <img src="https://www.jandy.com/products/water-features/sheer-descent-example.jpg" alt="Tanning Ledge" class="ml-3 w-16">
+            <img src="https://www.poolandspacompany.com/images/structural/tanning-ledge-placeholder.jpg" alt="Tanning Ledge" class="ml-3 feature-img">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="bench-seating" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Bench Seating</span>
-            <img src="https://www.jandy.com/products/water-features/bubbler-example.jpg" alt="Bench Seating" class="ml-3 w-16">
+            <img src="https://www.poolandspacompany.com/images/structural/bench-seating-placeholder.jpg" alt="Bench Seating" class="ml-3 feature-img">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="raised-spa" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Raised Spa</span>
-            <img src="https://www.jandy.com/products/water-features/spillover-spa-example.jpg" alt="Raised Spa" class="ml-3 w-16">
+            <img src="https://www.poolandspacompany.com/images/structural/raised-spa-placeholder.jpg" alt="Raised Spa" class="ml-3 feature-img">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="raised-beam" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Raised Beam / Waterline Wall</span>
-            <img src="https://www.jandy.com/products/water-features/water-bowl-example.jpg" alt="Raised Beam" class="ml-3 w-16">
+            <img src="https://www.poolandspacompany.com/images/structural/raised-beam-placeholder.jpg" alt="Raised Beam" class="ml-3 feature-img">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="baja-shelf" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Deep-end Swim Out / Baja Shelf</span>
-            <img src="https://www.jandy.com/products/water-features/sheer-descent-example.jpg" alt="Baja Shelf" class="ml-3 w-16">
+            <img src="https://www.poolandspacompany.com/images/structural/baja-shelf-placeholder.jpg" alt="Baja Shelf" class="ml-3 feature-img">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="steps-lighting" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Steps with Lighting</span>
-            <img src="https://www.jandy.com/products/water-features/bubbler-example.jpg" alt="Steps with Lighting" class="ml-3 w-16">
+            <img src="https://www.poolandspacompany.com/images/structural/steps-lighting-placeholder.jpg" alt="Steps with Lighting" class="ml-3 feature-img">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="retaining-walls" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Retaining Walls (if on slope)</span>
-            <img src="https://www.jandy.com/products/water-features/spillover-spa-example.jpg" alt="Retaining Walls" class="ml-3 w-16">
+            <img src="https://www.poolandspacompany.com/images/structural/retaining-walls-placeholder.jpg" alt="Retaining Walls" class="ml-3 feature-img">
           </label>
         </div>
         <div class="flex justify-between mt-8">
@@ -403,20 +409,22 @@
             <label class="block text-sm font-medium">Estimated Deck Square Footage</label>
             <input type="number" id="deck-sqft" class="w-full p-3 rounded-lg" min="100" placeholder="e.g., 500" required>
           </div>
-          <div class="space-y-6">
+          <div>
             <label class="block text-sm font-medium">Add-on Features</label>
-            <label class="flex items-center space-y-6">
-              <input type="checkbox" id="fire-pit" class="mr-3 h-5 w-5 text-blue-500">
-              <span class="text-sm">Fire Pit / Fire Bowl</span>
-            </label>
-            <label class="flex items-center">
-              <input type="checkbox" id="outdoor-kitchen" class="mr-3 h-5 w-5 text-blue-500">
-              <span class="text-sm">Outdoor Kitchen</span>
-            </label>
-            <label class="flex items-center">
-              <input type="checkbox" id="pergola" class="mr-3 h-5 w-5 text-blue-500">
-              <span class="text-sm">Pergola or Shade Structure</span>
-            </label>
+            <div class="space-y-6">
+              <label class="flex items-center">
+                <input type="checkbox" id="fire-pit" class="mr-3 h-5 w-5 text-blue-500">
+                <span class="text-sm">Fire Pit / Fire Bowl</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" id="outdoor-kitchen" class="mr-3 h-5 w-5 text-blue-500">
+                <span class="text-sm">Outdoor Kitchen</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" id="pergola" class="mr-3 h-5 w-5 text-blue-500">
+                <span class="text-sm">Pergola or Shade Structure</span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="flex justify-between mt-8">
@@ -432,22 +440,22 @@
           <label class="flex items-center">
             <input type="checkbox" id="sheer-descents" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Sheer Descents / Blade Falls</span>
-            <img src="https://www.jandy.com/products/water-features/sheer-descent-example.jpg" alt="Sheer Descent" class="ml-3 w-16">
+            <img src="https://www.jandy.com/products/water-features/sheer-descent-example.jpg" alt="Sheer Descent" class="ml-3 feature-img">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="bubblers" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Bubblers / Deck Jets</span>
-            <img src="https://www.jandy.com/products/water-features/bubbler-example.jpg" alt="Bubbler" class="ml-3 w-16">
+            <img src="https://www.jandy.com/products/water-features/bubbler-example.jpg" alt="Bubbler" class="ml-3 feature-img">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="spillover-spa" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Spillover Spa</span>
-            <img src="https://www.jandy.com/products/water-features/spillover-spa-example.jpg" alt="Spillover Spa" class="ml-3 w-16">
+            <img src="https://www.jandy.com/products/water-features/spillover-spa-example.jpg" alt="Spillover Spa" class="ml-3 feature-img">
           </label>
           <label class="flex items-center">
             <input type="checkbox" id="water-bowls" class="mr-3 h-5 w-5 text-blue-500">
             <span class="text-sm">Water Bowls / Fire-Water Bowls</span>
-            <img src="https://www.jandy.com/products/water-features/water-bowl-example.jpg" alt="Water Bowl" class="ml-3 w-16">
+            <img src="https://www.jandy.com/products/water-features/water-bowl-example.jpg" alt="Water Bowl" class="ml-3 feature-img">
           </label>
         </div>
         <div class="flex justify-between mt-8">
